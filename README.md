@@ -1,6 +1,6 @@
 Welcome to the GitHub repository associated with our research on single-molecule diffusional sizing using microfluidic technology, as detailed in our forthcoming paper XXX . This repository hosts two distinct scripts crucial for our study: the first script is dedicated to counting the number of bursts, or single molecules, as they pass through the confocal spot. The second script utilizes the data gathered by the first to calculate the hydrodynamic radius of the particles under observation. This guide will assist you in setting up the necessary software environment and provide a tutorial for using these scripts to analyze .ptu files for molecular sizing in microfluidic chips.
 
-#Installation Instructions
+# Installation Instructions
 
 This code package is compatible with Python 3.6. We recommend ensuring that your system runs this version for optimal performance. While later versions up to currently used (3.11) should also function, their compatibility is not guaranteed. For users needing to install Python, Anaconda is our suggested platform for its ease of use and comprehensive package management. The following commands should be written in the Anaconda prompt application or any terminal which accept pip.
 
