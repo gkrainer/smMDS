@@ -60,6 +60,7 @@ Upon launch, a Tkinter window will appear, prompting you to select a .ptu file f
 It not only extracts the number of bursts (or molecules) but also several parameters at each scan step. These include the minimum, maximum, and median intensity (photon count) of detected bursts, the scan position, and the total intensity of photon receive (SumPhoton). Everything is extracted in an output folder within the selected file folder 'Example/HSA_20pM_PBS_0p01tween_100ulph_400steps_2sec_27/output/'. Alldata.txt concatenate all the extracted parameters.
 
 ###Customization and Parameters
+
 You can change different parameters of the extraction of the burst if you open the file, getBursts_severalfiles_extractprofilesMDS.py
 All the parameter called with noise are not used for the moment, and was created for futur application in order to separate automatically noise and molecule.
 The important parameter are "set_lee_filter", "threshold_iT_signal", "min_phs_burst", "filter_name", and "output_folder"
