@@ -1,15 +1,14 @@
-Welcome to the GitHub repository associated with our research on single-molecule diffusional sizing using microfluidic technology, as detailed in our forthcoming paper XXX . This repository hosts two distinct scripts crucial for our study: the first script is dedicated to counting the number of bursts, or single molecules, as they pass through the confocal spot. The second script utilizes the data gathered by the first to calculate the hydrodynamic radius of the particles under observation. This guide will assist you in setting up the necessary software environment and provide a tutorial for using these scripts to analyze .ptu files for molecular sizing in microfluidic chips.
+Welcome to the GitHub repository associated with our research on single-molecule microfluidic diffusional sizing (smMDS), as detailed in Krainer et al. 2023 BioRxiv (doi: https://doi.org/10.1101/2023.07.12.548675). This repository hosts two distinct scripts crucial for analyis of smMDS experiments: the first script is dedicated to the analysis of single-molecule events from step scan measurements by counting the number of bursts, or single molecules, as they pass through the confocal spot. The second script utilizes the data gathered by the first to calculate the hydrodynamic radius of the particles under observation. This guide will assist you in setting up the necessary software environment and provide a tutorial for using these scripts to analyze .ptu files for diffusional sizing in microfluidic chips.
 
-# Installation Instructions
+# Installation instructions
 
-This code package is compatible with Python 3.6. We recommend ensuring that your system runs this version for optimal performance. While later versions up to currently used (3.11) should also function, their compatibility is not guaranteed. For users needing to install Python, Anaconda is our suggested platform for its ease of use and comprehensive package management. The following commands should be written in the Anaconda prompt application or any terminal which accept pip.
+This code package is compatible with Python 3.6. We recommend ensuring that your system runs this version for optimal performance. While later versions up to currently used (3.11) should also function, their compatibility is not guaranteed. For users needing to install Python, Anaconda is our suggested platform for its ease of use and comprehensive package management. The commands given below should be written in the Anaconda prompt application or any terminal which accept pip.
 
-You can find a "frozen version" of the microfluidic diffusional sizing code in the folder named diffusionDevice. For the most recent updates, please visit our Git repository: https://github.com/impact27/diffusion_device
+The burst detection script (name) is designed to run independently, requiring no additionl installation process.
 
-Our code is designed to be flexible, capable of working with data profiles obtained from confocal microscopy or extracting such profiles directly from images. It incorporates several dependencies, such as opencv3, which, while not directly utilized for the experiments described in our paper, are necessary for the code's full functionality.
-The burst detection script is designed to run independently, requiring no installation process.
+The code for diffusion profile analysis .... Our code is designed to be flexible, capable of working with data profiles obtained from confocal microscopy or extracting such profiles directly from images. It incorporates several dependencies, such as opencv3, which, while not directly utilized for the experiments described in our paper, are necessary for the code's full functionality. You can find a "frozen version" of the microfluidic diffusional sizing code in the folder named diffusionDevice. For the most recent updates, please visit our Git repository: https://github.com/impact27/diffusion_device
 
-## Code diffusional sizing instalation of dependency
+## Code diffusional sizing installation of dependency
 First, install opencv3 and tifffile with pip or conda (if you used the recomanded Anaconda):
 
 with pip:
@@ -24,13 +23,12 @@ You should now be able to import the following from python:
 - `import cv2`
 - `import tifffile`
 
-If you have windows and cv2 is not working, you might need to download the wheel yourself:
+If your operating system is Windows and cv2 does not install with the import prompt, you might need to download the wheel yourself:
 - https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv
-
-you can then install the package with pip:
+You can then install the package with pip:
 - `pip install opencv_python‑3.3.1‑cp36‑cp36m‑win_amd64.whl`
 
-## Code diffusional sizing instalation
+## Code diffusional sizing installation
 From anaconda prompt or terminal where pip work
 Move into the folder diffusion_device
 In UNIX environment:
@@ -41,7 +39,7 @@ Then use pip to install the package:
 
 This will install the microfluidic Diffusional Sizing code
 
-## Check installation of diffusional sizing is successful
+## Check installation if code for diffusional sizing is successful
 Open the diffusion_device/Samples folder and run in that order:
 `generate_metadata.py`
 `generate_settings.py`
@@ -78,11 +76,11 @@ After extracting single molecule profiles, proceed with the diffusional sizing a
 
 
 ###Customization and Parameters
-1.- Generating Metadata with generate_metadata.py
+1. Generating Metadata with generate_metadata.py
 generate_metadata.py is designed to define the structure and conditions of your dataset for analysis. It requires information such as the data path, type, chip characteristics, and experiment characteristic (flowrate and sample used). Use "multi_pos_scan" if your data combines four profiles in a single file; otherwise, opt for "single_pos_scan" for datasets with one peak profile per file. The script also gathers details on microfluidic chip characteristics like channel height, wall width, number of channels, flow rate, and the positions traversed between profiles. Additionally, it defines the pixel size, indicating the distance between scan positions.
 
-2.- Generating Settings with generate_setting.py
+2. Generating Settings with generate_setting.py
 generate_setting.py focuses on the analytical settings for the fitting process, including the radius range to test, the spacing between tested radii (either linear or logarithmic), and whether to filter or pre-bin profiles for more efficient fitting. Normally, processing 400 points takes under a minute, but increasing the number of points per profile set can significantly impact the computation time going easily further 10min to an hour.
 
-3.-Configuring sizescript.py
+3. Configuring sizescript.py
 To run sizescript.py, specify three inputs: the paths to the metadata files generated by "generate_metadata.py" and "generate_settings.py", and the path to the output folder. This script integrates the provided information to perform the diffusional sizing analysis.
