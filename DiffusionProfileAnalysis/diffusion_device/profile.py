@@ -211,7 +211,7 @@ def get_test_radii(settings):
         if settings["KEY_STG_R"] is None:
             raise RuntimeError("Please use the number of steps.")
         rmin, rmax, Nr = settings["KEY_STG_R"]
-        test_radii = np.exp(np.linspace(np.log(rmin), np.log(rmax), Nr))
+        test_radii = np.exp(np.linspace(np.log(rmin), np.log(rmax), int(Nr)))
     else:
         if settings["KEY_STG_R"] is not None:
             test_radii = np.linspace(*settings["KEY_STG_R"])

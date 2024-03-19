@@ -15,6 +15,7 @@ import matplotlib
 import os.path
 import re
 from getBursts_fct import get_bursts, get_ptufilename
+from scripts.readPTU import readPTU
 cmap = cm.viridis
 plt.close("all")
 
@@ -146,7 +147,7 @@ np.savetxt(os.path.join(output_foldername,
 # np.savetxt(os.path.join(output_foldername,
 #                         "Analysed_data_maxIntensities.txt"),
 #            maxIntensities,
-           delimiter='')
+#           delimiter='')
 np.savetxt(os.path.join(output_foldername,
                         "Analysed_data_SumPhoton.txt"),
            numb_photons_Total_files,
