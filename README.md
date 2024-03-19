@@ -31,13 +31,13 @@ You can then install the package with pip:
 ## Code diffusional sizing installation
 From anaconda prompt or terminal where pip work, move into the folder diffusion_device
 
-In UNIX environment:
+In Windows/UNIX environment:
 - `cd diffusion_device`
 
 Then use pip to install the package:
 - `pip install .`
 
-This will install the microfluidic Diffusional Sizing code
+This will install the code for diffusion profile analysis.
 
 ## Check installation if code for diffusional sizing is successful
 Open the diffusion_device/Samples folder and run in that order:
