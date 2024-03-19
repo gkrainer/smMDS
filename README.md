@@ -1,15 +1,15 @@
-Welcome to the GitHub repository associated with our research on single-molecule microfluidic diffusional sizing (smMDS), as detailed in Krainer et al. 2023 BioRxiv (doi: https://doi.org/10.1101/2023.07.12.548675). This repository hosts two distinct scripts crucial for analyis of smMDS experiments: the first script is dedicated to the analysis of single-molecule events from step scan measurements by counting the number of bursts, or single molecules, as they pass through the confocal spot. The second script utilizes the data gathered by the first to calculate the hydrodynamic radius of the particles under observation. This guide will assist you in setting up the necessary software environment and provide a tutorial for using these scripts to analyze .ptu files for diffusional sizing in microfluidic chips.
+Welcome to the GitHub repository associated with our research on single-molecule microfluidic diffusional sizing (smMDS), as detailed in Krainer et al. 2023 BioRxiv (doi: https://doi.org/10.1101/2023.07.12.548675). This repository hosts two distinct scripts crucial for analyis of smMDS experiments: the first script (SingleMoleculeAnalysis) is dedicated to the analysis of single-molecule events from step scan measurements by counting the number of bursts, or single molecules, as they pass through the confocal spot. The second script (DiffusionProfileAnalysis) utilizes the data gathered by the first to calculate the hydrodynamic radius of the particles under observation. This guide will assist you in setting up the necessary software environment and provide a tutorial for using these scripts to analyze .ptu files for diffusional sizing in microfluidic chips.
 
 # Installation instructions
 
 This code package is compatible with Python 3.6. We recommend ensuring that your system runs this version for optimal performance. While later versions up to currently used (3.11) should also function, their compatibility is not guaranteed. For users needing to install Python, Anaconda is our suggested platform for its ease of use and comprehensive package management. The commands given below should be written in the Anaconda prompt application or any terminal which accept pip.
 
-The burst detection script (name) is designed to run independently, requiring no additionl installation process.
+The burst detection script (SingleMoleculeAnalysis) is designed to run independently, requiring no additional installation process.
 
-The code for diffusion profile analysis .... Our code is designed to be flexible, capable of working with data profiles obtained from confocal microscopy or extracting such profiles directly from images. It incorporates several dependencies, such as opencv3, which, while not directly utilized for the experiments described in our paper, are necessary for the code's full functionality. You can find a "frozen version" of the microfluidic diffusional sizing code in the folder named diffusionDevice. For the most recent updates, please visit our Git repository: https://github.com/impact27/diffusion_device
+The code for diffusion profile analysis requires an installation process (('Code diffusional sizing installation of dependency', 'Code diffusional sizing installation, and Check installation if code for diffusional sizing is successful). This code is designed to be flexible, capable of working with data profiles obtained from confocal microscopy or extracting such profiles directly from images. It incorporates several dependencies, such as opencv3, which, while not directly utilized for the experiments described in our paper, are necessary for the code's full functionality. You can find a "frozen version" of the microfluidic diffusional sizing code in the folder named diffusionDevice. For the most recent updates, please visit our Git repository: https://github.com/impact27/diffusion_device
 
-## Code diffusional sizing installation of dependency
-First, install opencv3 and tifffile with pip or conda (if you used the recomanded Anaconda):
+## Code diffusional sizing: Installation of dependency
+First, install opencv3 and tifffile with pip or conda (if you used the recommended Anaconda):
 
 with pip:
 - `pip install tifffile`
@@ -29,8 +29,8 @@ You can then install the package with pip:
 - `pip install opencv_python‑3.3.1‑cp36‑cp36m‑win_amd64.whl`
 
 ## Code diffusional sizing installation
-From anaconda prompt or terminal where pip work
-Move into the folder diffusion_device
+From anaconda prompt or terminal where pip work, move into the folder diffusion_device
+
 In UNIX environment:
 - `cd diffusion_device`
 
