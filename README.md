@@ -23,6 +23,7 @@ You should now be able to import the following from python:
 
 If your operating system is Windows and cv2 does not install with the import prompt, you might need to download the wheel yourself:
 - https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv
+
 You can then install the package with pip:
 - `pip install opencv_python‑3.3.1‑cp36‑cp36m‑win_amd64.whl`
 
