@@ -1,10 +1,10 @@
-Welcome to the GitHub repository associated with our research on single-molecule microfluidic diffusional sizing (smMDS), as detailed in Krainer et al. 2023 BioRxiv (doi: https://doi.org/10.1101/2023.07.12.548675). This repository hosts two distinct scripts crucial for analysis of smMDS experiments: the first script (see folder "SingleMoleculeAnalysis") is dedicated to the analysis of single-molecule events from step scan measurements by counting the number of bursts, or single molecules, as they pass through the confocal spot. This code was written by Raphael Jacquat. The second script (see folder "DiffusionProfileAnalysis") utilizes the data gathered by the first to calculate the hydrodynamic radius of the particles under observation. This code is adapted from code originally written by Quentin Peter. For the most recent updates, please visit the GitHub repository: https://github.com/impact27/diffusion_device. This README guide will assist you in setting up the necessary software environment and provide a tutorial with an example data set (see folder "Example") for using these scripts to analyze .ptu files for diffusional sizing in microfluidic chips. The codes here are published under the GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007.
+Welcome to the GitHub repository associated with our research on single-molecule microfluidic diffusional sizing (smMDS), as detailed in Krainer et al. 2023 BioRxiv (doi: https://doi.org/10.1101/2023.07.12.548675). This repository hosts two distinct scripts crucial for analysis of smMDS experiments: the first script (see folder 'SingleMoleculeAnalysis') is dedicated to the analysis of single-molecule events from step scan measurements by counting the number of bursts, or single molecules, as they pass through the confocal spot. This code was written by Raphael Jacquat. The second script (see folder 'DiffusionProfileAnalysis') utilizes the data gathered by the first to calculate the hydrodynamic radius of the particles under observation. This code is adapted from code originally written by Quentin Peter. For the most recent updates, please visit the GitHub repository: https://github.com/impact27/diffusion_device. This README guide will assist you in setting up the necessary software environment and provide a tutorial with an example data set (see folder 'Example') for using these scripts to analyze .ptu files for diffusional sizing in microfluidic chips. The codes here are published under the GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007.
 
 # Installation instructions
 
 This code package is compatible with Python 3.6. We recommend ensuring that your system runs this version for optimal performance. While later versions up to currently used (3.11) should also function, their compatibility is not guaranteed. For users needing to install Python, Anaconda is our suggested platform for its ease of use and comprehensive package management. The commands given below should be written in the Anaconda prompt application or any terminal which accept pip.
 
-The burst detection script (in folder "SingleMoleculeAnalysis") is designed to run independently, requiring no additional installation process. The code for diffusion profile analysis (in folder "DiffusionProfileAnalysis") requires an installation process (see Section 'Code DiffusionProfileAnalysis - Installation of dependency', 'Code DiffusionProfileAnalysis - Installation' and 'Code DiffusionProfileAnalysis - Installation check'). This code is designed to be flexible, capable of working with data profiles obtained from confocal microscopy or extracting such profiles directly from images. It incorporates several dependencies, such as opencv3, which, while not directly utilized for the experiments described in our paper, are necessary for the code's full functionality.
+The burst detection script (in folder 'SingleMoleculeAnalysis') is designed to run independently, requiring no additional installation process. The code for diffusion profile analysis (in folder 'DiffusionProfileAnalysis') requires an installation process (see Section 'Code DiffusionProfileAnalysis - Installation of dependency', 'Code DiffusionProfileAnalysis - Installation' and 'Code DiffusionProfileAnalysis - Installation check'). This code is designed to be flexible, capable of working with data profiles obtained from confocal microscopy or extracting such profiles directly from images. It incorporates several dependencies, such as opencv3, which, while not directly utilized for the experiments described in our paper, are necessary for the code's full functionality.
 
 ## Code DiffusionProfileAnalysis - Installation of dependency
 First, install opencv3 and tifffile with pip OR conda (if you use the recommended Anaconda platform):
@@ -28,7 +28,7 @@ You can then install the package with pip:
 - `pip install opencv_python‑3.3.1‑cp36‑cp36m‑win_amd64.whl`
 
 ## Code DiffusionProfileAnalysis - Installation
-From the Anaconda prompt or the terminal where pip works, move into the folder "DiffusionProfileAnalysis":
+From the Anaconda prompt or the terminal where pip works, move into the folder 'DiffusionProfileAnalysis':
 
 In Windows/UNIX environment:
 - `cd DiffusionProfileAnalysis`
@@ -43,9 +43,9 @@ Open the DiffusionProfileAnalysis/Samples folder and run in that order:
 `generate_metadata.py`
 `generate_settings.py`
 `sizescript.py`
-If everything is running fine, you can proceed and not use the DiffusionProfileAnalysis folder.
+If everything is running fine, you can proceed with analysis. Notably, the 'DiffusionProfileAnalysis' folder is no longer required for analysis.
 
-# Tutorial: Extracting hydrodynamic radius from an example data set
+# Tutorial: Extracting the hydrodynamic radius from an example data set
 This tutorial provides a step-by-step guide on how to extract the hydrodynamic radius from smMDS measurements. The process is divided into two main steps:
 
 1.-Extracting diffusion profiles from recorded time traces:
@@ -53,6 +53,8 @@ The first step involves processing the recorded time traces at each position to 
 
 2.-Analyzing diffusion profiles to obtain the hydrodynamic radius:
 Following the generation of diffusion profiles, the next step is to employ the previously installed diffusional sizing code to analyze these profiles. This analysis will enable you to extract the hydrodynamic radius.
+
+This tutorial includes an example data set *see folder 'Example') featuring an smMDS measurement of labeled human serum albumin (HSA) at a concentration of 20 pM in PBS buffer, supplemented with 0.01% Tween20. The measurement utilized a flow rate of 100 µL/h, scanning 400 steps, each for 2 seconds.
 
 ## Extracting diffusion profiles from recorded time traces
 Execute the script 'getBursts_severalfiles_extractprofilesMDS.py' located within the folder 'SingleMoleculeAnalysis'. This script takes all .ptu files from a subfolder and creates diffusion profiles from smMDS measurements. Upon executing the script, a Tkinter window will appear (often hidden in the background), prompting you to select a .ptu file from your subfolder. The script will select every .ptu files from that folder to extract the number of counted molecule per position (meaning per .ptu file). You can try this using the data provided in the example data set by navigating to the subfolder 'Example/HSA_20pM_PBS_0p01tween_100ulph_400steps_2sec_27'. Execute the script, choose any .ptu file, and wait for the analysis to finish. The code extract not only the number of bursts but also several other parameters at each scan step. These include the minimum, maximum, and median intensities (photon counts) of detected bursts, the scan position, and the total intensity (SumPhoton). Everything is extracted in an output folder within the selected file folder. Alldata.txt concatenate all the extracted parameters.
