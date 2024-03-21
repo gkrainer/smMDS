@@ -44,25 +44,26 @@ Open the DiffusionProfileAnalysis/Samples folder and run in that order:
 `sizescript.py`
 If everything is running fine, you can proceed and not use the DiffusionProfileAnalysis folder.
 
-# Tutorial for extracting hydrodynamic radius from exmaple data set
-The extraction of hydrodynamic radius is divided into two main steps, each corresponding to the use of one of the scripts provided in this repository.
+# Tutorial: Extracting hydrodynamic radius from an example data set
+This tutorial provides a step-by-step guide on how to extract the hydrodynamic radius from smMDS measurements. The process is divided into two main steps:
 
-1.-Extracting Single Molecule Profiles:
-The initial phase involves extracting the profile of single molecules from your data. Ensure you have your data ready in the appropriate format (.ptu files).
-2.-Running the Diffusional Sizing Code:
-Once you have the single molecule profiles, the next step is to employ the diffusional sizing code, previously installed. This code analyzes the extracted profiles to calculate the hydrodynamic radius of the particles in your sample.
+1.-Extracting diffusion profiles from recorded time traces:
+The first step involves processing the recorded time traces at each position to identify single-molecule events using a burst-search algorithm. This analysis is conducted with the code in the "SingleMoleculeAnalysis" folder, which requires data in .ptu format. After identifying these events, the code creates diffusion profiles by plotting the number of counted molecules as a function of chip position.
 
-## Extracting Single Molecule Profiles
-The script which take several .ptu files and creat a profile of single molecule count per position is  'getBursts_severalfiles_extractprofilesMDS.py', located within the 'singlemoleculeanalysiscambridge-smac' directory.
-Upon launch, a Tkinter window will appear, prompting you to select a .ptu file from your scan profile folder. Navigate to 'Example/HSA_20pM_PBS_0p01tween_100ulph_400steps_2sec_27' and choose any .ptu file. The script will then select every .ptu files from the same folder to extract the number of counted molecule per position (meaning per .ptu file).
-It not only extracts the number of bursts (or molecules) but also several parameters at each scan step. These include the minimum, maximum, and median intensity (photon count) of detected bursts, the scan position, and the total intensity of photon receive (SumPhoton). Everything is extracted in an output folder within the selected file folder 'Example/HSA_20pM_PBS_0p01tween_100ulph_400steps_2sec_27/output/'. Alldata.txt concatenate all the extracted parameters.
+2.-Analyzing diffusion profiles to obtain the hydrodynamic radius:
+Following the generation of diffusion profiles, the next step is to employ the previously installed diffusional sizing code to analyze these profiles. This analysis will enable you to extract the hydrodynamic radius.
 
-###Customization and Parameters
+## Extracting diffusion profiles from recorded time traces
+Execute the script 'getBursts_severalfiles_extractprofilesMDS.py' located within the folder 'SingleMoleculeAnalysis'. This script takes all .ptu files from a subfolder and creates diffusion profiles from smMDS measurements. Upon executing the script, a Tkinter window will appear (often hidden in the background), prompting you to select a .ptu file from your subfolder. The script will select every .ptu files from that folder to extract the number of counted molecule per position (meaning per .ptu file). You can try this using the data provided in the example data set by navigating to the subfolder 'Example/HSA_20pM_PBS_0p01tween_100ulph_400steps_2sec_27'. Execute the script, choose any .ptu file, and wait for the analysis to finish. The code extract not only the number of bursts but also several other parameters at each scan step. These include the minimum, maximum, and median intensities (photon counts) of detected bursts, the scan position, and the total intensity (SumPhoton). Everything is extracted in an output folder within the selected file folder. Alldata.txt concatenate all the extracted parameters.
 
-You can change different parameters of the extraction of the burst if you open the file, getBursts_severalfiles_extractprofilesMDS.py
+###Customization and changing parameters
+
+
+
+You can change different parameters for the extraction of bursts if you open the file, getBursts_severalfiles_extractprofilesMDS.py
 All the parameter called with noise are not used for the moment, and was created for futur application in order to separate automatically noise and molecule.
 The important parameter are "set_lee_filter", "threshold_iT_signal", "min_phs_burst", "filter_name", and "output_folder"
-AAll parameters, except "output_folder", are detailed in the Supplementary Information of the associated paper.
+All parameters, except "output_folder", are detailed in the Supplementary Information of the associated paper.
 The "output_folder" allows you to choose in which folder you want to save the extracted data from the root of the file selected.
 You can choose to see intermediate plot with "show_plot" as True but it is mostly used internally to debug an unusual trace (be aware and careful as for a 400 step scan it will generate 400 plots).
 
