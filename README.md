@@ -44,7 +44,7 @@ Open the DiffusionProfileAnalysis/Samples folder and run in that order:
 `sizescript.py`
 If everything is running fine, you can proceed and not use the DiffusionProfileAnalysis folder.
 
-# Usage Guide with Example
+# Tutorial for extracting hydrodynamic radius from exmaple data set
 The extraction of hydrodynamic radius is divided into two main steps, each corresponding to the use of one of the scripts provided in this repository.
 
 1.-Extracting Single Molecule Profiles:
