@@ -7,13 +7,13 @@ This code package is compatible with Python 3.6. We recommend ensuring that your
 The burst detection script (in folder "SingleMoleculeAnalysis") is designed to run independently, requiring no additional installation process. The code for diffusion profile analysis (in folder "DiffusionProfileAnalysis") requires an installation process (see Section 'Code DiffusionProfileAnalysis - Installation of dependency', 'Code DiffusionProfileAnalysis - Installation' and 'Code DiffusionProfileAnalysis - Installation check'). This code is designed to be flexible, capable of working with data profiles obtained from confocal microscopy or extracting such profiles directly from images. It incorporates several dependencies, such as opencv3, which, while not directly utilized for the experiments described in our paper, are necessary for the code's full functionality.
 
 ## Code DiffusionProfileAnalysis - Installation of dependency
-First, install opencv3 and tifffile with pip or conda (if you used the recommended Anaconda):
+First, install opencv3 and tifffile with pip OR conda (if you use the recommended Anaconda platform):
 
-with pip:
+Installation with pip:
 - `pip install tifffile`
 - `pip install opencv-python`
 
-with conda:
+Installation with conda:
 - `conda install -c menpo opencv3`
 - `conda install -c conda-forge tifffile`
 
@@ -27,10 +27,10 @@ You can then install the package with pip:
 - `pip install opencv_python‑3.3.1‑cp36‑cp36m‑win_amd64.whl`
 
 ## Code DiffusionProfileAnalysis - Installation
-From anaconda prompt or terminal where pip work, move into the folder diffusion_device
+From the Anaconda prompt or the terminal where pip works, move into the folder "DiffusionProfileAnalysis":
 
 In Windows/UNIX environment:
-- `cd diffusion_device`
+- `cd DiffusionProfileAnalysis`
 
 Then use pip to install the package:
 - `pip install .`
@@ -38,11 +38,11 @@ Then use pip to install the package:
 This will install the code for diffusion profile analysis.
 
 ## Code DiffusionProfileAnalysis - Installation check
-Open the diffusion_device/Samples folder and run in that order:
+Open the DiffusionProfileAnalysis/Samples folder and run in that order:
 `generate_metadata.py`
 `generate_settings.py`
 `sizescript.py`
-If everything is running fine, you can proceed forward and not use the diffusion_device folder.
+If everything is running fine, you can proceed and not use the DiffusionProfileAnalysis folder.
 
 # Usage Guide with Example
 The extraction of hydrodynamic radius is divided into two main steps, each corresponding to the use of one of the scripts provided in this repository.
