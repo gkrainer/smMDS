@@ -64,6 +64,16 @@ Execute the script 'getBursts_severalfiles_extractprofilesMDS.py' located within
 
 
 You can change different parameters for the extraction of bursts if you open the file, getBursts_severalfiles_extractprofilesMDS.py
+
+user_setting = {"set_lee_filter": 2,
+                "threshold_iT_signal": 0.05,
+                "threshold_iT_noise": 0.1,
+                "min_phs_burst" : 10,
+                "min_phs_noise" : 160,
+                "filter_name" : "addLeefilter",
+                "show_plot" : False,
+                "output_folder": "output"}
+
 All the parameter called with noise are not used for the moment, and was created for futur application in order to separate automatically noise and molecule.
 The important parameter are "set_lee_filter", "threshold_iT_signal", "min_phs_burst", "filter_name", and "output_folder"
 All parameters, except "output_folder", are detailed in the Supplementary Information of the associated paper.
