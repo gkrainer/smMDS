@@ -39,7 +39,7 @@ Then use pip to install the package:
 This will install the code for diffusion profile analysis.
 
 ## Code DiffusionProfileAnalysis - Installation check
-Open the DiffusionProfileAnalysis/Samples folder and run in that order:
+Open the 'DiffusionProfileAnalysis/Samples' folder and run in that order:
 `generate_metadata.py`
 `generate_settings.py`
 `sizescript.py`
