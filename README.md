@@ -49,7 +49,7 @@ If everything is running fine, you can proceed with analysis. Notably, the 'Diff
 This tutorial provides a step-by-step guide on how to extract the hydrodynamic radius from smMDS measurements. The process is divided into two main steps:
 
 1.-Extracting diffusion profiles from recorded time traces:
-The first step involves processing the recorded time traces at each position to identify single-molecule events using a burst-search algorithm. This analysis is conducted with the code in the "SingleMoleculeAnalysis" folder, which requires data in .ptu format. After identifying these events, the code creates diffusion profiles by plotting the number of counted molecules as a function of chip position.
+The first step involves processing the recorded time traces at each position to identify single-molecule events using a burst-search algorithm. This analysis is conducted with the code in the 'SingleMoleculeAnalysis' folder, which requires data in .ptu format. After identifying these events, the code creates diffusion profiles by plotting the number of counted molecules as a function of chip position.
 
 2.-Analyzing diffusion profiles to obtain the hydrodynamic radius:
 Following the generation of diffusion profiles, the next step is to employ the previously installed diffusional sizing code to analyze these profiles. This analysis will enable you to extract the hydrodynamic radius.
